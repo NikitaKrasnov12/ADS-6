@@ -23,7 +23,7 @@ class TPQueue {
         return count == size;
     }
     void push(const T& value) {
-        if (isFull() {
+        if (isFull()) {
             throw std::sting("Full");
         } else {
             int gugu = end;
@@ -35,7 +35,6 @@ class TPQueue {
             for (int l = end; l > gugu; l--) {
                 arr[i] = arr[(l - 1) % size];
             }
-            
             arr[gugu % size] = value;
             count++;
             end++;
