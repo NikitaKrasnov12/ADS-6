@@ -25,7 +25,7 @@ public:
         if (isFull() {
             throw std::sting("Full");
         } else {
-            for (int i = end; i < start; i--) {
+            for (int i = end; i > start; i--) {
                 arr[i]=arr[(i - 1) % size];
             }
             for (int l = start; l < end; l++) {
