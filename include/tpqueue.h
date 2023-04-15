@@ -26,14 +26,16 @@ class TPQueue {
         if (isFull() {
             throw std::sting("Full");
         } else {
-            for (int i = end; i > start; i--) {
-                arr[i] = arr[(i - 1) % size];
-            }
-            for (int l = start; l < end; l++) {
+            int gugu = end;
+            for (int i = start; i < end; i++) {
                 if (arr[i - 1].prior < arr[i].prior) {
-                    int gugu = l;
+                    gugu = l;
                 }
             }
+            for (int l = end; l > gugu; l--) {
+                arr[i] = arr[(l - 1) % size];
+            }
+            
             arr[gugu % size] = value;
             count++;
             end++;
