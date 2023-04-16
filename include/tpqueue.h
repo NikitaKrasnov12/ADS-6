@@ -33,19 +33,19 @@ class TPQueue {
                     break;
                 }
             }
-            count++;
+            ++count;
             for (int l = end; l > gugu; l--) {
                 arr[l % size] = arr[(l - 1) % size];
             }
             arr[gugu % size] = value;
-            end++;
+            ++end;
         }
     }
     T& pop() {
         if (isEmpty()) {
             throw std::string("Empty");
         } else {
-            count--;
+            --count;
             return arr[start++ % size];
         }
     }
