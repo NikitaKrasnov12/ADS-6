@@ -28,12 +28,12 @@ class TPQueue {
         } else {
             int gugu = end;
             for (int i = start; i < end; i++) {
-                if (value.prior < arr[i - 1].prior) {
-                    gugu = l;
+                if (value.prior > arr[i - 1].prior) {
+                    gugu = i;
                 }
             }
             for (int l = end; l > gugu; l--) {
-                arr[i % size] = arr[(l - 1) % size];
+                arr[l % size] = arr[(l - 1) % size];
             }
             arr[gugu % size] = value;
             count++;
