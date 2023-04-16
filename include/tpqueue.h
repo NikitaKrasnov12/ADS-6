@@ -27,13 +27,13 @@ class TPQueue {
             throw std::sting("Full");
         } else {
             int gugu = end;
+            ++count;
             for (int i = start; i < end; i++) {
                 if (arr[i].prior < value.prior) {
                     gugu = i;
                     break;
                 }
             }
-            ++count;
             for (int l = end; l > gugu; l--) {
                 arr[l % size] = arr[(l - 1) % size];
             }
@@ -42,12 +42,12 @@ class TPQueue {
         }
     }
     T& pop() {
-        if (isEmpty()) {
-            throw std::string("Empty");
-        } else {
-            --count;
-            return arr[start++ % size];
+        assert(count > 0);
+        T thing = arr[start];
+        if (++start > size) {
+            start = start - size + 1;
         }
+        return thing;
     }
 };
 
