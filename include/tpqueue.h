@@ -28,7 +28,7 @@ class TPQueue {
         } else {
             int gugu = end;
             for (int i = start; i < end; i++) {
-                if (arr[i - 1].prior < value.prior) {
+                if (arr[i].prior < value.prior) {
                     gugu = i;
                     break;
                 }
